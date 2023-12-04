@@ -1,6 +1,6 @@
 ALTER TABLE employees
 ADD FOREIGN KEY (status_id) REFERENCES employee_statuses(id),
-ADD FOREIGN KEY (role_id) REFERENCES employee_roles(id);
+ADD FOREIGN KEY (role_id) REFERENCES roles(id);
 
 ALTER TABLE components
 ADD FOREIGN KEY (status_id) REFERENCES component_statuses(id),
@@ -8,13 +8,13 @@ ADD FOREIGN KEY (type_id) REFERENCES component_types(id);
 
 ALTER TABLE systems
 ADD FOREIGN KEY (status_id) REFERENCES system_statuses(id),
-ADD FOREIGN KEY (audit_frequency_id) REFERENCES audit_frequencies(id),
+ADD FOREIGN KEY (audit_frequency_id) REFERENCES system_audit_frequencies(id),
 ADD FOREIGN KEY (approver_id) REFERENCES employees(id),
-ADD FOREIGN KEY (audit_satatus_id) REFERENCES audit_statuses(id);
+ADD FOREIGN KEY (audit_status_id) REFERENCES system_audit_statuses(id);
 
 ALTER TABLE system_teams
 ADD FOREIGN KEY (system_id) REFERENCES systems(id),
-ADD FOREIGN KEY (team_id) REFERENCES teams(id);
+ADD FOREIGN KEY (team_id) REFERENCES system_team_choices(id);
 
 ALTER TABLE system_events
 ADD FOREIGN KEY (event_type_id) REFERENCES event_types(id),
@@ -27,7 +27,7 @@ ADD FOREIGN KEY (status_id) REFERENCES release_note_statuses(id);
 ALTER TABLE application_billing_information
 ADD FOREIGN KEY (application_id) REFERENCES applications(id),
 ADD FOREIGN KEY (billing_frequency_id) REFERENCES billing_frequencies(id),
-ADD FOREIGN KEY (cost_audit_frequency_id) REFERENCES audit_frequencies(id),
+ADD FOREIGN KEY (cost_audit_frequency_id) REFERENCES cost_audit_frequencies(id),
 ADD FOREIGN KEY (payment_method_id) REFERENCES payment_methods(id);
 
 ALTER TABLE applications
@@ -82,11 +82,7 @@ ADD FOREIGN KEY (system_id) REFERENCES systems(id),
 ADD FOREIGN KEY (ticket_id) REFERENCES tickets(id);
 
 ALTER TABLE ticket_dependencies
-ADD FOREIGN KEY (ticket_dependency_id) REFERENCES tickets(id);
-
-ALTER TABLE system_tickets
-ADD FOREIGN KEY (system_id) REFERENCES systems(id),
-ADD FOREIGN KEY (ticket_id) REFERENCES tickets(id);
+ADD FOREIGN KEY (dependency_id) REFERENCES tickets(id);
 
 ALTER TABLE system_release_notes
 ADD FOREIGN KEY (system_id) REFERENCES systems(id),
