@@ -1,0 +1,4 @@
+CREATE IF NOT EXISTS TABLE release_note_statuses (
+  id INT PRIMARY KEY AUTOINCREMENT NOT NULL,
+  description VARCHAR(30) NOT NULL
+);

@@ -1,0 +1,4 @@
+CREATE IF NOT EXISTS TABLE application_statuses (
+  id INT PRIMARY KEY AUTOINCREMENT NOT NULL,
+  description VARCHAR(30) NOT NULL
+);
