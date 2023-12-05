@@ -1,5 +1,4 @@
-INSERT INTO event_types (description)
-VALUES 
+INSERT INTO event_types (description) VALUES 
     ('System Failure'),
     ('Maintenance'),
     ('Performance Degradation'),
