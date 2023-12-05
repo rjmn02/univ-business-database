@@ -6,9 +6,9 @@ VALUES
     ("Micheal Phelps", 1, "mphelps@amazon.com", "", "", 2),
     ("Sam Santos", 1, "ssantos@amazon.com", "", "", 5),
     ("James Bacon", 2, "jbacon@amazon.com", "", "", 3),
-    ("Dan Labrador", 2, "dlabrador@amazon.com", "", "", 4),
-    ("Christian Janniz Prado", 2, "cjprado@amazon.com", "", "", 5),
-    ("Jemriz Advincula", 2, "jadvincula@amazon.com", "", "", 5),
+    ("Dan Labrador", 1, "dlabrador@amazon.com", "", "", 4),
+    ("Christian Janniz Prado", 1, "cjprado@amazon.com", "", "", 5),
+    ("Jemriz Advincula", 1, "jadvincula@amazon.com", "", "", 5),
     ("Christian Rhyss Jimenez", 2, "crjimenez@amazon.com", "", "", 5),
 
 
