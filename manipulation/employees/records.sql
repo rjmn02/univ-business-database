@@ -6,7 +6,9 @@ VALUES
     ("Dan Labrador", 1, "dlabrador@myamazonguy.com", "U05DSF5RZFX", "1204886326928641", 4),
     ("Christian Janniz Prado", 1, "cjprado@myamazonguy.com", "L87GH2PQYWV", "9876543210987654", 5),
     ("Jemriz Advincula", 1, "jadvincula@myamazonguy.com", "A42JK9NXM6R", "8024679135792468", 5),
-    ("Christian Rhyss Jimenez", 2, "crjimenez@myamazonguy.com", "E36TB4ZL1DC", "3141592653589793", 6),
+    ("Christian Rhyss Jimenez", 2, "crjimenez@myamazonguy.com", "E36TB4ZL1DC", "3141592653589793", 5),
+    ("John Cena", 2, "jcena@myamazonguy.com", "K81WG3TQYLV", "2468013579246801", 5),
+
 
 
 
