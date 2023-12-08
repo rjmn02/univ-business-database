@@ -1,2 +1,2 @@
 INSERT INTO release_notes(name, new_features, enhancements, fixes, active, released_at, status_id, last_modified_at, broadcasted_at) VALUES
-(),
+("Website Order Task/Record Creation", "Amazon Brand Story Website Order Submission Zap Automation", "", "", 1, 2023-10-6 09:09:42, 3, 2023-10-09, 2023-10-09),
