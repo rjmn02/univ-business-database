@@ -1,2 +1,4 @@
 INSERT INTO release_notes(name, new_features, enhancements, fixes, active, released_at, status_id, last_modified_at, broadcasted_at) VALUES
-("Website Order Task/Record Creation", "Amazon Brand Story Website Order Submission Zap Automation", "", "", 1, 2023-10-6 09:09:42, 3, 2023-10-09, 2023-10-09),
+    ("Website Order Task/Record Creation", "Amazon Brand Story Website Order Submission Zap Automation", "", "", 1, 2023-10-6 09:09:42, 3, 2023-10-09, 2023-10-09),
+    ("Website Order Task/Record Creation", "New JOTForm Created for Amazon Listing Reinstatement, Upon submission it will automatically: Create Asana Tasks, Update Spreadsheets, Send Stack Alerts", "", "", 1, 2023-12-4 10:09:00, 3, 2023-12-4, 2023-12-4),
+    ("Gift Card Incentive Program", "", "Updated the GC Slack notigication of our PK members to: Congratulations, you have receivdd a bonus of $ for outstanding work! It will be sent to your Veem account in the next pay period. Thank you!", "", 1, 2023-10-09 10:54:00, 3, 2023-10-09, 2023-10-09),
