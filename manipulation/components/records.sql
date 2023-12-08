@@ -6,5 +6,5 @@ INSERT INTO components(name, status_id, description, type_id, link, record_error
     ('When new employee onboarded in the Human Resource Base, then send welcome message', 2, 'Sends welcome message to new hires on their first day', 58, 'https://zapier.com/editor/214097872/draft/_GEN_169946/fields', 'None', 22, '2023-11-21 16:43:00'),
     
     --chatgpt
-    ('Generate Jotform Submissions Report in Google Workspace Sheet', 2, 'Generates a report of Jotform submissions in a Google Workspace Sheet', 43, 'https://jotform.com/mamzform/table/id?=9j32F-1g55F', 'None', 3, '2023-08-29 21:10:45'),
-    ('Slack Channel Invitations', 2, 'Sends invitations to users for a Slack channel', 52, 'https://mamzng.slack.com/invite-id/9ihUhBjsI', 'None', 4, '2023-03-08 14:45:22');
+    ('Generate Jotform Submissions Report in Google Workspace Sheet', 2, 'Generates a report of Jotform submissions in a Google Workspace Sheet', 43, 'https://jotform.com/mamzform/table/id?=9j32F-1g55F', 'None', 13, '2023-08-29 21:10:45'),
+    ('Slack Channel Invitations', 2, 'Sends invitations to users for a Slack channel', 52, 'https://mamzng.slack.com/invite-id/9ihUhBjsI', 'None', 12, '2023-03-08 14:45:22');
