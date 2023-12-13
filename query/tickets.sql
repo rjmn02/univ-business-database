@@ -20,7 +20,7 @@ SELECT
     t.change_approval_id,
     t.slack_message_link,
     t.ticket_dependency_id,
-    s.video_sop_link AS release_link -- Update with the relevant column name
+    s.video_sop_link AS release_link
 FROM
     tickets t
 JOIN
