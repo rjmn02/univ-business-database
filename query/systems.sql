@@ -1,4 +1,4 @@
-CREATE VIEW systemView AS
+CREATE VIEW SystemView AS
 SELECT
     systems.id AS SystemID,
     systems.name AS SystemName,
@@ -26,8 +26,6 @@ JOIN
 JOIN
     employees AS approver ON system_approvers.approver_id = approver.id
 JOIN
-    applications ON systems.id = applications.id
-JOIN
     system_components ON systems.id = system_components.system_id
 JOIN
     components ON system_components.component_id = components.id
@@ -41,6 +39,13 @@ LEFT JOIN
     tickets ON system_tickets.ticket_id = tickets.id
 LEFT JOIN
     system_audit_statuses ON systems.audit_status_id = system_audit_statuses.id
+LEFT JOIN
+    system_applications ON systems.id = system_applications.system_id
+LEFT JOIN
+    applications ON system_applications.application_id = applications.id
 GROUP BY
-    systems.id, SystemName, SystemDescription, ApplicationName, ServiceStart, ServiceEnd, SystemStatus, ITAuditFrequency,
+    SystemID, SystemName, SystemDescription, ApplicationName, ServiceStart, ServiceEnd, SystemStatus, ITAuditFrequency,
     LastITAudit, NextITAudit, Approver, HasVideoSOP, HasWrittenSOP, RecordID, AuditStatus;
+
+
+

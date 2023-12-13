@@ -15,6 +15,6 @@ FROM
 JOIN
     roles r ON e.role_id = r.id
 JOIN
-    systems s ON e.id = s.approver_id -- Assuming there's a relationship with systems where an employee is an approver
+    systems s ON e.id = s.approver_id 
 JOIN
     employee_statuses es ON e.status_id = es.id;
