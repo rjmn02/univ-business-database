@@ -2,42 +2,36 @@ CREATE VIEW TicketsView AS
 SELECT
     t.id AS ticket_id,
     t.title AS ticket_title,
-    t.due_date,
     p.name AS project_name,
-    td.title AS dependency_title,
-    pr.description AS priority,
-    tt.description AS ticket_type,
     s.name AS system_name,
+    t.priority_id,
+    t.type_id,
     t.status_id,
-    ts.description AS ticket_status,
+    pr.description AS priority_description,
+    tt.description AS type_description,
+    ts.description AS status_description,
+    td.title AS dependency_title,
     te.description AS ticket_entity,
-    t.system_id,
-    t.project_id,
-    t.owner_id,
     e.name AS owner_name,
-    ta.due_date AS next_action_date,
-    t.access_approval_id,
-    t.change_approval_id,
-    t.slack_message_link,
-    t.ticket_dependency_id,
-    s.video_sop_link AS release_link
+    ta.due_date AS next_action_date
 FROM
     tickets t
-JOIN
+LEFT JOIN
     projects p ON t.project_id = p.id
 LEFT JOIN
-    tickets td ON t.ticket_dependency_id = td.id
-JOIN
-    ticket_priorities pr ON t.priority_id = pr.id
-JOIN
-    ticket_types tt ON t.type_id = tt.id
-JOIN
     systems s ON t.system_id = s.id
-JOIN
+LEFT JOIN
+    ticket_priorities pr ON t.priority_id = pr.id
+LEFT JOIN
+    ticket_types tt ON t.type_id = tt.id
+LEFT JOIN
     ticket_statuses ts ON t.status_id = ts.id
-JOIN
+LEFT JOIN
+    tickets td ON t.ticket_dependency_id = td.id
+LEFT JOIN
     ticket_entity_choices te ON t.entity_id = te.id
-JOIN
+LEFT JOIN
     employees e ON t.owner_id = e.id
 LEFT JOIN
     tickets ta ON t.id = ta.ticket_dependency_id;
+
