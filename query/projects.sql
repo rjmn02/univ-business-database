@@ -7,6 +7,7 @@ SELECT
 FROM
     projects p
 JOIN
-    system_teams st ON p.id = st.project_id
+    system_teams st ON p.id = st.team_id
 JOIN
     systems s ON st.system_id = s.id;
+
