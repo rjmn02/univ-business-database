@@ -234,9 +234,7 @@ GROUP BY
     c.id, ComponentName, ComponentDescription, ComponentStatus, ComponentType,
     ComponentLink, RecordErrors, CreatedBy, ModifiedBy, CreatedAt;
 
-
-
-
+    
 
 CREATE VIEW ITAuditFrequencyReport AS
 SELECT
