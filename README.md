@@ -36,5 +36,3 @@ If you identify any issues or have suggestions for improvements, please feel fre
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-**Note:** Ensure sensitive information such as connection strings and credentials are handled securely and are not included in the repository.
