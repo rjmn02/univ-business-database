@@ -40,33 +40,36 @@ GROUP BY
 
 
 
-CREATE VIEW ApplicationBillingReport AS
+CREATE VIEW BillingInformationReport AS
 SELECT
+    pm.id AS PaymentID,
+    pm.issuing_bank AS BankName,
+    pm.card_holder_name AS CardHolderName,
     a.id AS ApplicationID,
     a.name AS ApplicationName,
-    a.website_homepage_link AS WebsiteLink,
-    ab.billable_users AS BillableUsers,
-    ab.cost_per_user_per_month AS CostPerUserPerMonth,
-    ab.cost_per_user_per_year AS CostPerUserPerYear,
-    ab.cost_per_month AS CostPerMonth,
-    ab.cost_per_year AS CostPerYear,
-    ab.billing_amount AS BillingAmount,
-    ab.billing_page_link AS BillingPageLink,
+    abi.cost_per_user_per_month AS CostPerUserPerMonth,
+    abi.cost_per_user_per_year AS CostPerUserPerYear,
+    abi.cost_per_month AS CostPerMonth,
+    abi.cost_per_year AS CostPerYear,
+    abi.billing_amount AS BillingAmount,
+    abi.billing_page_link AS BillingPageLink,
     bf.description AS BillingFrequency,
     ast.description AS ApplicationStatus
 FROM
-    applications a
+    payment_methods pm
 JOIN
-    application_billing_information ab ON a.billing_information_id = ab.id
+    application_billing_information abi ON abi.payment_method_id = pm.id
 JOIN
-    billing_frequencies bf ON ab.billing_frequency_id = bf.id
+    billing_frequencies bf ON bf.id = abi.billing_frequency_id
+JOIN
+    applications a ON a.id = abi.application_id
 JOIN
     application_statuses ast ON a.status_id = ast.id;
 
 
 
 
-    CREATE VIEW ReleaseNotesReport AS
+CREATE VIEW ReleaseNotesReport AS
 SELECT
     rn.id AS ReleaseNoteID,
     rn.name AS ReleaseNoteName,
@@ -83,9 +86,11 @@ SELECT
 FROM
     release_notes rn
 JOIN
-    systems s ON rn.system_id = s.id
+    system_release_notes srn ON rn.id = srn.release_note_id
 JOIN
-    system_approvers sa ON rn.system_id = sa.system_id
+    systems s ON srn.system_id = s.id
+JOIN
+    system_approvers sa ON s.id = sa.system_id
 JOIN
     employees u ON sa.approver_id = u.id
 JOIN
@@ -161,20 +166,20 @@ CREATE VIEW ProjectStatusReport AS
 SELECT
     p.id AS ProjectID,
     p.name AS ProjectName,
-    p.description AS ProjectDescription,
+    NULL AS ProjectDescription,
     GROUP_CONCAT(DISTINCT t.title ORDER BY t.title ASC) AS Tickets,
-    p.due_date AS DueDate,
+    MAX(t.due_date) AS DueDate,
     GROUP_CONCAT(DISTINCT e.name ORDER BY e.name ASC) AS TeamMembers
 FROM
     projects p
 JOIN
-    project_teams pt ON p.id = pt.project_id
+    ticket_projects tp ON p.id = tp.project_id
 JOIN
-    employees e ON pt.employee_id = e.id
-LEFT JOIN
-    tickets t ON p.id = t.project_id
+    tickets t ON tp.ticket_id = t.id
+JOIN
+    employees e ON e.id = t.owner_id
 GROUP BY
-    p.id, ProjectName, ProjectDescription, DueDate;
+    p.id, ProjectName, ProjectDescription;
 
 
 
@@ -242,18 +247,4 @@ FROM
     systems s
 JOIN
     system_audit_frequencies saf ON s.audit_frequency_id = saf.id;
-
-
-
-
-
-CREATE VIEW BillingAccessReport AS
-SELECT
-    r.id AS RoleID,
-    r.name AS RoleName,
-    bai.access_level AS BillingAccess
-FROM
-    roles r
-JOIN
-    billing_access_information bai ON r.id = bai.role_id;
 
