@@ -19,7 +19,7 @@ This repository contains SQL scripts detailing the development of the comprehens
 
 ## Database Structure
 
-The database structure is designed to support My Amazon Guy's operations efficiently. Key entities include employees, projects, applications, systems, and more. The script files cover the creation of tables, views, and foreign key constraints.
+The database structure is designed to support company's operations efficiently. Key entities include employees, projects, applications, systems, and more. The script files cover the creation of tables, views, and foreign key constraints.
 
 ## Querying and Reporting
 
@@ -27,7 +27,7 @@ Explore the SQL views for querying and generating reports. Key views include App
 
 ## Integration and Deployment
 
-This database seamlessly integrates with My Amazon Guy's existing IT infrastructure. The MySQL database facilitates data synchronization, ensuring consistency across various systems.
+This database seamlessly integrates with the company's existing IT infrastructure. The MySQL database facilitates data synchronization, ensuring consistency across various systems.
 
 ## Contributing
 
