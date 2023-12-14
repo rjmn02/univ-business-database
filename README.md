@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains SQL scripts detailing the development of the comprehensive database system for My Amazon Guy. The database covers key entities, such as employees, projects, applications, and systems. The scripts include the schema definition, constraints, and relationships.
+This repository contains SQL scripts detailing the development of the comprehensive database system for the company of our choice. The database covers key entities, such as employees, projects, applications, and systems. The scripts include the schema definition, constraints, and relationships.
 
 ## Getting Started
 
