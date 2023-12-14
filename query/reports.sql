@@ -248,3 +248,21 @@ FROM
 JOIN
     system_audit_frequencies saf ON s.audit_frequency_id = saf.id;
 
+
+
+CREATE VIEW BillingAccessReport AS
+SELECT
+    ba.id AS BillingAccessID,
+    abi.id AS ApplicationBillingInformationID,
+    abi.application_id AS ApplicationID,
+    a.name AS ApplicationName,
+    abi.billing_page_link AS BillingPageLink,
+    r.name AS RoleName
+FROM 
+    billing_access ba
+JOIN
+    application_billing_information abi ON abi.id = ba.application_billing_information_id
+JOIN
+    applications a ON a.id = abi.application_id
+JOIN 
+    roles r ON r.id = ba.roles_id;

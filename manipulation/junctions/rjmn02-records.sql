@@ -48,9 +48,9 @@ INSERT INTO system_components(system_id, component_id) VALUES
     (7, 7);
 
 INSERT INTO system_tickets(system_id, ticket_id) VALUES
+    (2,13),
+    (3,15);
     (4, 2),
-
-    --assumptions
     (1, 4),
     (6, 4),
     (5, 6);
@@ -58,4 +58,6 @@ INSERT INTO system_tickets(system_id, ticket_id) VALUES
 INSERT INTO release_note_tickets(release_note_id, ticket_id) VALUES
     (1, 1),
     (1, 1),
+    (2, 13),
+    (2, 13),
     (4, 3),
